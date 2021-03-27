@@ -1,0 +1,1 @@
+Wats up from NewsController!
