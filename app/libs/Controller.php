@@ -11,8 +11,8 @@ class Controller
         $this->view = new View($prefix);
         $this->name_model = $this->getBaseNameByController() . 'Model';
 
-        if (file_exists(DIR_PATH_APP . '/models/' . $this->name_model . '.php')) {
-            require_once DIR_PATH_APP . '/models/' . $this->name_model . '.php';
+        if (file_exists(DIR_PATH_APP . '/models' . $prefix . $this->name_model . '.php')) {
+            require_once DIR_PATH_APP . '/models' . $prefix . $this->name_model . '.php';
             $this->model = new $this->name_model;
         }
     }

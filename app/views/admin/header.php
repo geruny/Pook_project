@@ -5,6 +5,7 @@
 <head>
     <script>
         window.BASE_DIR_AJAX = "<?= BASE_DIR_AJAX ?>";
+        window.BASE_DIR = "<?= ADMIN_PREFIX ?>";
     </script>
     <title><?= $this->getTitle(); ?></title>
     <meta charset="UTF-8" />

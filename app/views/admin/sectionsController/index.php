@@ -36,12 +36,13 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                <div class="alert alert-danger error_danger" style="display:none" role="alert">
-                    Ошибка!
-                </div>
-                <div class="mx-auto">
-                    <form id="form_new_section" method="post" action="<?= ADMIN_PREFIX ?>/sections/add/">
+            <form id="form_new_section" method="post" action="<?= ADMIN_PREFIX ?>/sections/add/">
+                <div class="modal-body">
+                    <div class="alert alert-danger error_danger" style="display: none" role="alert">
+                        Ошибка!
+                    </div>
+                    <div class="mx-auto">
+                        <input type="hidden" value="0" name="depth_level" />
                         <div class="from-group">
                             <label for="section_name">Название категории</label>
                             <input type="text" required class="form-control" name="section_name" id="section_name" placeholder="">
@@ -51,17 +52,17 @@
                             <input type="text" required class="form-control" name="section_code" id="section_code" placeholder="">
                         </div>
                         <div class="from-group">
-                            <label for="parent-section">Родительская категория</label>
-                            <select type="text" required class="form-control" name="parent-section" id="parent-section" placeholder="">
+                            <label for="parent_section">Родительская категория</label>
+                            <select type="text" required class="form-control" name="parent_section" id="parent_section" placeholder="">
                                 <option value="0" data-dept-level="-1">.</option>
                             </select>
                         </div>
-                    </form>
+                    </div>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" id="add_new_section" onclick="add_new_section()">Добавить</button>
-            </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" id="add_new_section">Добавить</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
