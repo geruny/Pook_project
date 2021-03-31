@@ -41,7 +41,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span></button>
-                <a class="navbar-brand" href="#"><span>Lumino</span>Admin</a>
+                <a class="navbar-brand" href="<?= MAIN_PREFIX . '/' ?>"><span>Lumino</span>Admin</a>
                 <ul class="nav navbar-top-links navbar-right">
                     <li class="dropdown"><a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
                             <em class="fa fa-envelope"></em><span class="label label-danger">15</span>
