@@ -36,4 +36,18 @@ class SectionsController extends Controller
         else
             echo json_encode(array("error" => true));
     }
+
+    public function del()
+    {
+        $data = array(
+            "id" => htmlspecialchars((int)$_POST["id"])
+        );
+
+        if ($data["id"] > 0) {
+            if ($this->model->delete("sections", "id", $data["id"]))
+                echo json_encode(array("success" => true));
+            else
+                echo json_encode(array("success" => false));
+        }
+    }
 }

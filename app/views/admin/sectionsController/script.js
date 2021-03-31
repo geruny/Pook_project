@@ -8,11 +8,11 @@ $(document).ready(function () {
             url: window.BASE_DIR + "/sections/add/",
             data: data,
             dataType: "json",
-            type:"POST",
+            type: "POST",
             success: function (json) {
                 if (json.error > 0)
-                    $(".error_danger").show();
-                else{
+                    $("#new_section_modal.error_danger").show();
+                else {
                     location.reload();
                 }
             }
@@ -21,3 +21,20 @@ $(document).ready(function () {
     })
 
 })
+
+function sectionDelete(id, name) {
+    if (confirm("Удалить категорию \"" + name + "\" c id = " + id + "?"))
+        $.ajax({
+            url: window.BASE_DIR + "/sections/del/",
+            data: {id:id},
+            dataType: "json",
+            type: "POST",
+            success: function (json) {
+                if (json.error > 0)
+                    alert("Ошибка")
+                else {
+                    location.reload();
+                }
+            }
+        })
+}

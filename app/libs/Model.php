@@ -20,4 +20,15 @@ class Model
         else
             return false;
     }
+
+    public function delete($table, $attr, $value)
+    {
+        $sth = $this->db->prepare("DELETE FROM " . $table . " WHERE " . $attr . " = " . $value);
+        $sth->execute(array());
+
+        if ($sth->rowCount() > 0)
+            return true;
+        else
+            return false;
+    }
 }

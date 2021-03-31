@@ -23,8 +23,9 @@
             <td></td>
             <td><?= $section["parent_id"] ?></td>
             <td>
-                <a href="javascript:;" onclick="" class="bg-info">Изменить</a>
-                <a href="javascript:;" onclick='sectionDelete(<?= $section["id"] ?>,<?= $section["name"] ?>)' class="bg-danger">Удалить</a>
+                <button href="javascript:;" onclick="" class="btn btn-info">Изменить</button>
+                &nbsp;
+                <button href="javascript:;" onclick="sectionDelete(<?= $section["id"] ?>,'<?= $section["name"] ?>')" class="btn btn-danger">Удалить</button>
             </td>
         </tr>
         <? endforeach;?>
