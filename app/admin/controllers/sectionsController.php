@@ -9,6 +9,16 @@ class SectionsController extends Controller
         $this->view->setTitle("Категории");
     }
 
+    public function index()
+    {
+        if ($sections = $this->model->getList('sections'))
+            $this->view->arResult["ITEMS"] = $sections;
+        else
+            $this->view->arResult["ITEMS"] = array();
+
+        parent::index();
+    }
+
     public function add()
     {
         $data = array(

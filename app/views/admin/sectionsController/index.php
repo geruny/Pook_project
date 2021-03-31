@@ -1,5 +1,6 @@
 <? require_once DIR_PATH_APP.'/views/admin/header.php'?>
 
+<? if(count($this->arResult[ITEMS])>0):?>
 <table class="table table-dark table-striped">
     <thead>
         <tr>
@@ -13,11 +14,28 @@
         </tr>
     </thead>
     <tbody>
-
+        <? foreach($this->arResult[ITEMS] as $section): ?>
+        <tr>
+            <td><?= $section["id"] ?></td>
+            <td><?= $section["name"] ?></td>
+            <td><?= $section["code"] ?></td>
+            <td><?= $section["depth_level"] ?></td>
+            <td></td>
+            <td><?= $section["parent_id"] ?></td>
+            <td>
+                <a href="javascript:;" onclick="" class="bg-info">Изменить</a>
+                <a href="javascript:;" onclick='sectionDelete(<?= $section["id"] ?>,<?= $section["name"] ?>)' class="bg-danger">Удалить</a>
+            </td>
+        </tr>
+        <? endforeach;?>
     </tbody>
     <tfoot></tfoot>
-
 </table>
+<? else:?>
+<div class="alert alert-danger error_danger" role="alert">
+    Нет категорий по вашему запросу
+</div>
+<? endif ?>
 
 <div class="row">
     <div class="col-md-12">
