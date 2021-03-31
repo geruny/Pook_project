@@ -122,8 +122,8 @@
             </div>
         </form>
         <ul class="nav menu">
-            <li class="active"><a href="<?= MAIN_PREFIX ?>/admin"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
-            <li class="active"><a href="<?= MAIN_PREFIX ?>/admin/sections"><em class="fa fa-dashboard">&nbsp;</em> Категории</a></li>
+            <li class="<?= App::getCurPage() == ADMIN_PREFIX . '/' ? "active" : "" ?>"><a href="<?= MAIN_PREFIX ?>/admin"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
+            <li class="<?= App::getCurPage() == ADMIN_PREFIX . '/sections' ? "active" : "" ?>"><a href="<?= MAIN_PREFIX ?>/admin/sections"><em class="fa fa-dashboard">&nbsp;</em> Категории</a></li>
 
             <li><a href="<?= MAIN_PREFIX ?>/reg/logout"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
         </ul>
@@ -145,6 +145,3 @@
             </div>
         </div>
         <!--/.row-->
-
-
-        <div class="container"></div>

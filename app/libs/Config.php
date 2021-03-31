@@ -1,6 +1,7 @@
 <?php
 
 define('MAIN_PREFIX', '/petrov/Books_site');
+define('ADMIN_PREFIX', '/petrov/Books_site/admin');
 define('TEMPLATE_PATH', '/petrov/Books_site/app/views');
 define('TEMPLATE_ADMIN_PATH', '/petrov/Books_site/app/views/admin');
 define('DIR_PATH_APP', __DIR__ . "/..");

@@ -65,4 +65,16 @@ class App
         var_dump($param);
         echo '</pre>';
     }
+
+    static function getCurPage($params=false){
+        $url=$_SERVER["REQUEST_URI"];
+
+        if(!$params && strpos($url,"?")){
+            $url=substr($url,0,strpos($url,"?"));
+        }
+
+        $url=str_replace("index.php","",$url);
+
+        return $url;
+    }
 }
