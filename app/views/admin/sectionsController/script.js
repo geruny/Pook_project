@@ -11,7 +11,7 @@ $(document).ready(function () {
             type: "POST",
             success: function (json) {
                 if (json.error > 0)
-                    $("#new_section_modal.error_danger").show();
+                    $("#new_section_modal .error_danger").show();
                 else {
                     location.reload();
                 }
