@@ -1,6 +1,6 @@
 <? require_once DIR_PATH_APP.'/views/admin/header.php'?>
 
-<? if(count($this->arResult[ITEMS])>0):?>
+<? if(count($this->arResult["ITEMS"])>0):?>
 <table class="table table-dark table-striped">
     <thead>
         <tr>
