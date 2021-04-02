@@ -12,21 +12,20 @@ $(document).ready(function () {
             success: function (json) {
                 if (json.error > 0)
                     $("#new_section_modal .error_danger").show();
-                else {
+                else
                     location.reload();
-                }
             }
-
         });
     })
-
 })
 
 function sectionDelete(id, name) {
-    if (confirm("Удалить категорию \"" + name + "\" c id = " + id + "?"))
+    if (confirm("Удалить категорию \"" + name + "\" c id = " + id + "?")) {
         $.ajax({
             url: window.BASE_DIR + "/sections/del/",
-            data: {id:id},
+            data: {
+                id: id
+            },
             dataType: "json",
             type: "POST",
             success: function (json) {
@@ -37,4 +36,5 @@ function sectionDelete(id, name) {
                 }
             }
         })
+    }
 }
