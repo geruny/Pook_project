@@ -9,5 +9,15 @@ class ProductsController extends Controller
         parent::__construct($prefix);
 
         $this->view->setTitle("Архив");
+
+        $sections=$this->getTreeForArray($this->modal->getList('sections'));
+
+        $this->view->sections=$sections;
+
+    }
+
+    public function add()
+    {
+        
     }
 }

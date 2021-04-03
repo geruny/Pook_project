@@ -74,6 +74,9 @@
                             <label for="parent_section">Родительская категория</label>
                             <select type="text" required class="form-control" name="parent_section" id="parent_section" placeholder="">
                                 <option value="0" data-dept-level="-1">.</option>
+                                <? foreach($this->sections as $section): ?>
+                                    echo '<option value="'.$section['id'].'"data-depth_level="'.$sections['depth_level'].'">'.$section['name'].'</option>';
+                                <? endforeach; ?>
                             </select>
                         </div>
                     </div>

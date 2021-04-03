@@ -37,4 +37,19 @@ class Controller
 
         return strtolower(substr($name, 0, $first_index));
     }
+
+    protected function getTreeForArray($data,$level=0,$pid=0,$in="name",$ipid="parent_id",$sep="-&nbsp;")
+    {
+        $result=array();
+        
+        foreach ($data as $row) {
+            if($row[$ipid]==$pid){
+                $row[$in]=str_repeat($sep,$level).$row[$in];
+                $_res=$this->getTreeForArray($data,$level+1,$row['id']);
+                $result[]=$row;
+                $result=array_merge($result,$_res);
+            }
+        }
+        return $result;
+    }
 }

@@ -2,6 +2,9 @@
 
 class SectionsController extends Controller
 {
+
+    private static $instance;
+
     public function __construct($prefix)
     {
         parent::__construct($prefix);
@@ -49,5 +52,17 @@ class SectionsController extends Controller
             else
                 echo json_encode(array("success" => false));
         }
+    }
+    public static function getInstance()
+    {
+        $instance = null;
+
+        if (!empty(self::$instance) && self::$instance instanceof SectionsController) {
+            $instance = self::$instance;
+        } else {
+            $instance = new SectionsController();
+        }
+
+        return $instance;
     }
 }

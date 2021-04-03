@@ -17,7 +17,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form id="form_new_product" method="post" action="<?= ADMIN_PREFIX ?>/products/add/">
+            <form id="form_new_product" name="form_new_product"  method="post" action="<?= ADMIN_PREFIX ?>/products/add/">
                 <div class="modal-body">
                     <div class="alert alert-danger error_danger" style="display: none" role="alert">
                         Ошибка!
@@ -35,6 +35,9 @@
                             <label for="parent_section">Жанр(категория)</label>
                             <select type="text" required class="form-control" name="parent_section" id="parent_section" placeholder="">
                                 <option value="0" data-dept-level="-1">.</option>
+                                <? foreach($this->sections as $section): ?>
+                                echo '<option value="'.$section['id'].'">'.$section['name'].'</option>';
+                                <? endforeach; ?>
                             </select>
                         </div>
                         <div class="from-group">
@@ -55,15 +58,15 @@
                         <textarea name="priduct-description" class="form-control" rows="3"></textarea>
                         <div class="from-group">
                             <label for="">Картинка анонса</label>
-                            <input type="file" required class="form-control" name="product_p_img">
+                            <input type="file" class="form-control" name="product_p_img">
                         </div>
                         <div class="from-group">
                             <label for="">Детальная картинка</label>
-                            <input type="file" required class="form-control" name="product_d_img">
+                            <input type="file" class="form-control" name="product_d_img">
                         </div>
                         <div class="from-group">
                             <label for="">Дополнительное изображение</label>
-                            <input type="file" required class="form-control" name="product_imgs" multiple>
+                            <input type="file" class="form-control" name="product_imgs" multiple>
                         </div>
                     </div>
                 </div>
