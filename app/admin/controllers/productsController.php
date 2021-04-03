@@ -1,5 +1,7 @@
 <?php
 
+include_once 'sectionsController.php';
+
 class ProductsController extends Controller
 {
     public function __construct($prefix)
