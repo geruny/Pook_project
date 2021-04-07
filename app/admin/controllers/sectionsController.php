@@ -57,7 +57,7 @@ class SectionsController extends Controller
             'genres_id' => htmlspecialchars($_POST["id"]),
             'name' => htmlspecialchars($_POST["section_name"]),
         );
-
+        
         if (strlen($data['name']) >= 2 && $data['genres_id'] > 0)
             if ($this->model->edit($data))
                 echo json_encode(array("error" => false));
@@ -74,16 +74,16 @@ class SectionsController extends Controller
         $this->view->render(get_class($this),"edit_form");
     }
 
-    public static function getInstance()
-    {
-        $instance = null;
+    // public static function getInstance()
+    // {
+    //     $instance = null;
 
-        if (!empty(self::$instance) && self::$instance instanceof SectionsController) {
-            $instance = self::$instance;
-        } else {
-            $instance = new SectionsController();
-        }
+    //     if (!empty(self::$instance) && self::$instance instanceof SectionsController) {
+    //         $instance = self::$instance;
+    //     } else {
+    //         $instance = new SectionsController();
+    //     }
 
-        return $instance;
-    }
+    //     return $instance;
+    // }
 }

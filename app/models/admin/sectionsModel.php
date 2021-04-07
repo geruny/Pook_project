@@ -26,8 +26,8 @@ class SectionsModel extends Model
     public function edit($data)
     {
         $sth = $this->db->prepare(
-            "UPDATE genres name=:name " .
-            " WHERE genres_id=:id;"
+            "UPDATE genres SET name=:name " .
+            " WHERE genres_id=:genres_id;"
         );
 
         $sth->execute($data);
