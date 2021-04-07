@@ -66,7 +66,7 @@
                         </div>
                         <div class="from-group">
                             <label for="">Дополнительное изображение</label>
-                            <input type="file" class="form-control" name="product_imgs" multiple>
+                            <input type="file" class="form-control" name="product_imgs[]" multiple>
                         </div>
                     </div>
                 </div>
