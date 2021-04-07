@@ -1,5 +1,6 @@
 <?php
 
+use Libs\Files;
 include_once 'sectionsController.php';
 
 class ProductsController extends Controller

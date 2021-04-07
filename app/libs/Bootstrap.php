@@ -9,3 +9,4 @@ require_once 'Model.php';
 require_once 'Database.php';
 require_once 'User.php';
 require_once 'Book.php';
+require_once 'Files.php';
