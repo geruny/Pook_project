@@ -10,8 +10,8 @@ class SectionsModel extends Model
     public function add($data)
     {
         $sth = $this->db->prepare(
-            "INSERT INTO sections (name, code, depth_level, parent_id) " .
-                " VALUE (:name, :code, :depth_level, :parent_id);"
+            "INSERT INTO sections (name, code) " .
+                " VALUE (:name, :code);"
         );
 
         $sth->execute($data);

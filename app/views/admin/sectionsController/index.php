@@ -1,27 +1,18 @@
 <? require_once DIR_PATH_APP.'/views/admin/header.php'?>
 
-<? if(count($this->arResult["ITEMS"])>0):?>
+<? if(count($this->arResult['ITEMS'])>0):?>
 <table class="table table-dark table-striped">
     <thead>
         <tr>
-            <th>#</th>
-            <th>Имя</th>
-            <th>Код</th>
-            <th>Уровень</th>
-            <th>Кол-во подкатегорий</th>
-            <th>Родитель</th>
-            <th>Действия</th>
+            <th>ID</th>
+            <th>Название</th>
         </tr>
     </thead>
     <tbody>
-        <? foreach($this->arResult[ITEMS] as $section): ?>
+        <? foreach($this->arResult['ITEMS'] as $section): ?>
         <tr>
-            <td><?= $section["id"] ?></td>
+            <td><?= $section["genres_id"] ?></td>
             <td><?= $section["name"] ?></td>
-            <td><?= $section["code"] ?></td>
-            <td><?= $section["depth_level"] ?></td>
-            <td></td>
-            <td><?= $section["parent_id"] ?></td>
             <td>
                 <button href="javascript:;" onclick="" class="btn btn-info">Изменить</button>
                 &nbsp;

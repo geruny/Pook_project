@@ -10,7 +10,7 @@ class ProductsController extends Controller
 
         $this->view->setTitle("Архив");
 
-        $sections=$this->getTreeForArray($this->modal->getList('sections'));
+        $sections=$this->model->getList('books');
 
         $this->view->sections=$sections;
 

@@ -14,7 +14,7 @@ class SectionsController extends Controller
 
     public function index()
     {
-        if ($sections = $this->model->getList('sections'))
+        if ($sections = $this->model->getList('genres'))
             $this->view->arResult["ITEMS"] = $sections;
         else
             $this->view->arResult["ITEMS"] = array();
@@ -27,8 +27,6 @@ class SectionsController extends Controller
         $data = array(
             'name' => htmlspecialchars($_POST["section_name"]),
             'code' => htmlspecialchars($_POST["section_code"]),
-            'parent_id' => htmlspecialchars($_POST["parent_section"]) == 0 ? null : htmlspecialchars($_POST["parent_section"]),
-            'depth_level' => is_null($_POST["depth_level"]) ? 0 : htmlspecialchars($_POST["depth_level"])
         );
 
         if (strlen($data['name']) >= 2 && strlen($data['code']) >= 2)
