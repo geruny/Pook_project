@@ -44,12 +44,18 @@ class SectionsController extends Controller
         );
 
         if ($data["id"] > 0) {
-            if ($this->model->delete("sections", "id", $data["id"]))
+            if ($this->model->delete("genres", "genres_id", $data["id"]))
                 echo json_encode(array("success" => true));
             else
                 echo json_encode(array("success" => false));
         }
     }
+
+    public function getById($id)
+    {
+        $this->model->getById($id);
+    }
+
     public static function getInstance()
     {
         $instance = null;

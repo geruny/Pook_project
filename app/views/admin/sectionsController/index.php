@@ -14,9 +14,9 @@
             <td><?= $section["genres_id"] ?></td>
             <td><?= $section["name"] ?></td>
             <td>
-                <button href="javascript:;" onclick="" class="btn btn-info">Изменить</button>
+                <button onclick="" class="btn btn-info">Изменить</button>
                 &nbsp;
-                <button href="javascript:;" onclick="sectionDelete(<?= $section["id"] ?>,'<?= $section["name"] ?>')" class="btn btn-danger">Удалить</button>
+                <button onclick="sectionDelete(<?=$section["genres_id"]?>,'<?=$section["name"]?>')" class="btn btn-danger">Удалить</button>
             </td>
         </tr>
         <? endforeach;?>

@@ -40,3 +40,21 @@ function sectionDelete(id, name) {
         })
     }
 }
+
+function sectionEdit(id) {
+    $.ajax({
+        url: window.BASE_DIR + "/sections/del/",
+        data: {
+            id: id
+        },
+        dataType: "json",
+        type: "POST",
+        success: function (json) {
+            if (json.error > 0)
+                alert("Ошибка")
+            else {
+                location.reload();
+            }
+        }
+    })
+}
