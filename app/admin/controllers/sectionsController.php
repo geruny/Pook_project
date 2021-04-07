@@ -26,10 +26,9 @@ class SectionsController extends Controller
     {
         $data = array(
             'name' => htmlspecialchars($_POST["section_name"]),
-            'code' => htmlspecialchars($_POST["section_code"]),
         );
 
-        if (strlen($data['name']) >= 2 && strlen($data['code']) >= 2)
+        if (strlen($data['name']) >= 2)
             if ($id = $this->model->add($data))
                 echo json_encode(array("error" => false));
             else

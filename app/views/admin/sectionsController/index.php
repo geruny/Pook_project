@@ -5,7 +5,7 @@
     <thead>
         <tr>
             <th>ID</th>
-            <th>Название</th>
+            <th>Жанр</th>
         </tr>
     </thead>
     <tbody>
@@ -52,23 +52,10 @@
                         Ошибка!
                     </div>
                     <div class="mx-auto">
-                        <input type="hidden" value="0" name="depth_level" />
+                        <input type="hidden" value="0"/>
                         <div class="from-group">
-                            <label for="section_name">Название категории</label>
+                            <label for="section_name">Название жанра</label>
                             <input type="text" required class="form-control" name="section_name" id="section_name" placeholder="">
-                        </div>
-                        <div class="from-group">
-                            <label for="section_code">Код категории</label>
-                            <input type="text" required class="form-control" name="section_code" id="section_code" placeholder="">
-                        </div>
-                        <div class="from-group">
-                            <label for="parent_section">Родительская категория</label>
-                            <select type="text" required class="form-control" name="parent_section" id="parent_section" placeholder="">
-                                <option value="0" data-dept-level="-1">.</option>
-                                <? foreach($this->sections as $section): ?>
-                                    echo '<option value="'.$section['id'].'"data-depth_level="'.$sections['depth_level'].'">'.$section['name'].'</option>';
-                                <? endforeach; ?>
-                            </select>
                         </div>
                     </div>
                 </div>

@@ -10,10 +10,12 @@ $(document).ready(function () {
             dataType: "json",
             type: "POST",
             success: function (json) {
-                if (json.error > 0)
+                if (json.error > 0){
                     $("#new_section_modal .error_danger").show();
-                else
+                }
+                else{
                     location.reload();
+                }
             }
         });
     })
