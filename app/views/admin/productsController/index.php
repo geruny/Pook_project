@@ -35,9 +35,9 @@
                             <label for="parent_section">Жанр(категория)</label>
                             <select type="text" required class="form-control" name="parent_section" id="parent_section" placeholder="">
                                 <option value="0" data-dept-level="-1">.</option>
-                                <? foreach($this->sections as $section): ?>
-                                echo '<option value="'.$section['id'].'">'.$section['name'].'</option>';
-                                <? endforeach; ?>
+                                <? foreach($this->sections as $section): 
+                                echo '<option value="'.$section['genres_id'].'">'.$section['name'].'</option>';
+                                endforeach; ?>
                             </select>
                         </div>
                         <div class="from-group">

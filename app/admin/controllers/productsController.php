@@ -10,14 +10,12 @@ class ProductsController extends Controller
 
         $this->view->setTitle("Архив");
 
-        $sections=$this->model->getList('books');
+        $sections = $this->model->getList('genres');
 
-        $this->view->sections=$sections;
-
+        $this->view->sections = $sections;
     }
 
     public function add()
     {
-        
     }
 }

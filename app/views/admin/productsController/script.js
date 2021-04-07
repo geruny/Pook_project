@@ -8,8 +8,8 @@ $(document).ready(function () {
         $.ajax({
             url: window.BASE_DIR + "/products/add/",
             data: data,
-            processData:false,
-            contentType:false,
+            processData: false,
+            contentType: false,
             dataType: "json",
             type: "POST",
             success: function (json) {
