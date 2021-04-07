@@ -14,9 +14,9 @@
             <td><?= $section["genres_id"] ?></td>
             <td><?= $section["name"] ?></td>
             <td>
-                <button onclick="" class="btn btn-info">Изменить</button>
+                <button onclick="getEditFormById(<?= $section["genres_id"] ?>)" class="btn btn-info">Изменить</button>
                 &nbsp;
-                <button onclick="sectionDelete(<?=$section["genres_id"]?>,'<?=$section["name"]?>')" class="btn btn-danger">Удалить</button>
+                <button onclick="sectionDelete(<?= $section["genres_id"] ?>,'<?= $section["name"] ?>')" class="btn btn-danger">Удалить</button>
             </td>
         </tr>
         <? endforeach;?>
@@ -52,7 +52,7 @@
                         Ошибка!
                     </div>
                     <div class="mx-auto">
-                        <input type="hidden" value="0"/>
+                        <input type="hidden" value="0" />
                         <div class="from-group">
                             <label for="section_name">Название жанра</label>
                             <input type="text" required class="form-control" name="section_name" id="section_name" placeholder="">

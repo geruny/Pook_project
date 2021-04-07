@@ -51,9 +51,27 @@ class SectionsController extends Controller
         }
     }
 
-    public function getById($id)
+    public function edit()
     {
-        $this->model->getById($id);
+        $data = array(
+            'genres_id' => htmlspecialchars($_POST["id"]),
+            'name' => htmlspecialchars($_POST["section_name"]),
+        );
+
+        if (strlen($data['name']) >= 2 && $data['genres_id'] > 0)
+            if ($this->model->edit($data))
+                echo json_encode(array("error" => false));
+            else
+                echo json_encode(array("error" => true));
+        else
+            echo json_encode(array("error" => true));
+    }
+
+    public function getEditFormById($id)
+    {
+        $data=$this->model->getById($id, 'genres');
+        $this->view->section=$data;
+        $this->view->render(get_class($this),"edit_form");
     }
 
     public static function getInstance()

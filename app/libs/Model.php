@@ -40,19 +40,19 @@ class Model
 
     public function getById($id, $table, $select = "*")
     {
-        $table_id = $table . '_' . $id;
+        $table_id = $table . '_id';
 
         if (is_array($select)) {
             $select = implode(", ", $select);
         }
 
         $sth = $this->db->prepare("SELECT " . $select . " FROM "
-            . $table . " WHERE " . $table_id . "= :id");
+            . $table . " WHERE " . $table_id . "= :id LIMIT 1");
 
         $sth->execute(array(":id" => $id));
-
+        
         if ($sth->rowCount() > 0) {
-            return $sth->fetchAll(PDO::FETCH_ASSOC);
+            return $sth->fetchAll(PDO::FETCH_ASSOC)[0];
         } else
             return false;
     }

@@ -23,5 +23,19 @@ class SectionsModel extends Model
             return false;
     }
 
+    public function edit($data)
+    {
+        $sth = $this->db->prepare(
+            "UPDATE genres name=:name " .
+            " WHERE genres_id=:id;"
+        );
+
+        $sth->execute($data);
+
+        if ($sth->rowCount() > 0) {
+            return true;
+        } else
+            return false;
+    }
    
 }

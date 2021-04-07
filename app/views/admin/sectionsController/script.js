@@ -41,20 +41,38 @@ function sectionDelete(id, name) {
     }
 }
 
-function sectionEdit(id) {
+function sectionEdit(){
+     $('#form_edit_section').submit(function (event) {
+         event.preventDefault();
+         let data = $('#form_edit_section').serializeArray();
+
+         $.ajax({
+             url: window.BASE_DIR + "/sections/edit/",
+             data: data,
+             dataType: "json",
+             type: "POST",
+             success: function (json) {
+                 if (json.error > 0) {
+                     $("#form_edit_section .error_danger").show();
+                 } else {
+                     location.reload();
+                 }
+             }
+         });
+     })
+}
+
+function getEditFormById(id) {
     $.ajax({
-        url: window.BASE_DIR + "/sections/del/",
-        data: {
-            id: id
-        },
-        dataType: "json",
+        url: window.BASE_DIR + `/sections/getEditFormById/${id}/`,
+        dataType: "html",
         type: "POST",
-        success: function (json) {
-            if (json.error > 0)
-                alert("Ошибка")
-            else {
-                location.reload();
-            }
+        success: function (html) {
+            $('div.main').append(html);
+            $('#edit_section_modal').on('hidden.bs.modal',function(e){
+                $(e.target).remove();
+            });
+            $('#edit_section_modal').modal('show');
         }
     })
 }
