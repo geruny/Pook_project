@@ -36,4 +36,13 @@ class Files
         } else
             return false;
     }
+
+    static function deleteFile($fileName)
+    {
+        if (file_exists(self::d_path . $fileName)) {
+            unlink(self::d_path . $fileName);
+            return true;
+        } else
+            return false;
+    }
 }
