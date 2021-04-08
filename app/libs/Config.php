@@ -14,3 +14,7 @@ define('DBUSER', 'ck27434_books');
 define('DBPASS', 't18i4ERs');
 
 define('ADMIN_ROLE', '1');
+
+///files properties
+
+define("MAX_UPLOAD_SIZE", "5242880");

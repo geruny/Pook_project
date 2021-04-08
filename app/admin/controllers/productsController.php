@@ -30,6 +30,8 @@ class ProductsController extends Controller
         if(strlen($data['product_title'])<1)
         $errors['title']='short';
 
+        Files::uploadFile($_FILES['product_img'],get_class($this));
+
         if(count($errors)==0){
         $addData=array(
             'title'=>$data['product_title'],
