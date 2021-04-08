@@ -6,6 +6,7 @@
         <tr>
             <th>ID</th>
             <th>Жанр</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>

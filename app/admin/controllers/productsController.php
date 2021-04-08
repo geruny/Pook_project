@@ -17,6 +17,16 @@ class ProductsController extends Controller
         $this->view->sections = $sections;
     }
 
+    public function index()
+    {
+        if ($books = $this->model->getList('books'))
+        $this->view->arResult["ITEMS"] = $books;
+        else
+            $this->view->arResult["ITEMS"] = array();
+
+        parent::index();
+    }
+
     public function add()
     {
         $data = array();
@@ -43,7 +53,7 @@ class ProductsController extends Controller
                 'genres_id' => $data['genres_id'],
                 'writers_id' => $data['writers_id'],
                 'img' => $data['product_img'],
-                'active' => is_null($data['product_active']) ? 'N' : 'Y'
+                'active' => is_null($data['product_active']) ? '0' : '1'
             );
 
             if ($id = $this->model->add($addData))

@@ -1,5 +1,47 @@
 <? require_once DIR_PATH_APP.'/views/admin/header.php'?>
 
+<? if(count($this->arResult['ITEMS'])>0):?>
+<table class="table table-dark table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Название</th>
+            <th>Дата</th>
+            <th>Описание</th>
+            <th>Жанр</th>
+            <th>Автор</th>
+            <th>Активность</th>
+            <th>Изображение</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <? foreach($this->arResult['ITEMS'] as $product): ?>
+        <tr>
+            <td><?= $product["books_id"] ?></td>
+            <td><?= $product["title"] ?></td>
+            <td><?= $product["date"] ?></td>
+            <td><?= $product["description"] ?></td>
+            <td><?= $product["genres"] ?></td>
+            <td><?= $product["writers"] ?></td>
+            <td><?= $product["active"] ?></td>
+            <td><?= strlen($product["pic"]) > 0 ? "<img src='" . MAIN_PREFIX . "/upload/{$product["pic"]}' width='50px' />" : "" ?></td>
+            <td>
+                <button onclick="getEditFormById(<?= $product["product_id"] ?>)" class="btn btn-info">Изменить</button>
+                &nbsp;
+                <button onclick="sectionDelete(<?= $product["product_id"] ?>,'<?= $product["title"] ?>')" class="btn btn-danger">Удалить</button>
+            </td>
+        </tr>
+        <? endforeach;?>
+    </tbody>
+    <tfoot></tfoot>
+</table>
+<? else:?>
+<div class="alert alert-danger error_danger" role="alert">
+    Нет категорий по вашему запросу
+</div>
+<? endif ?>
+
 <div class="row">
     <div class="col-md-12">
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#new_product_modal">
@@ -17,7 +59,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form id="form_new_product" name="form_new_product"  method="post" action="<?= ADMIN_PREFIX ?>/products/add/">
+            <form id="form_new_product" name="form_new_product" method="post" action="<?= ADMIN_PREFIX ?>/products/add/">
                 <div class="modal-body">
                     <div class="alert alert-danger error_danger" style="display: none" role="alert">
                         Ошибка!
