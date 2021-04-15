@@ -1,6 +1,6 @@
 <? require_once DIR_PATH_APP.'/views/admin/header.php'?>
 
-<? if(count($this->arResult['ITEMS'])>0):?>
+<? if(count($this->arResult['books'])>0):?>
 <table class="table table-dark table-striped">
     <thead>
         <tr>
@@ -16,7 +16,7 @@
         </tr>
     </thead>
     <tbody>
-        <? foreach($this->arResult['ITEMS'] as $product): ?>
+        <? foreach($this->arResult['books'] as $product): ?>
         <tr>
             <td><?= $product["books_id"] ?></td>
             <td><?= $product["title"] ?></td>
@@ -78,7 +78,7 @@
                         <div class="from-group">
                             <label for="parent_section">Жанр</label>
                             <select type="text" required class="form-control" name="product_genre" id="parent_section" placeholder="">
-                                <option value="0" data-dept-level="-1">.</option>
+                                <option value="0">Выберите жанр</option>
                                 <? foreach($this->sections as $section): 
                                 echo '<option value="'.$section['genres_id'].'">'.$section['name'].'</option>';
                                 endforeach; ?>

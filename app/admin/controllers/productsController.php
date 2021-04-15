@@ -20,9 +20,9 @@ class ProductsController extends Controller
     public function index()
     {
         if ($books = $this->model->getList('books'))
-        $this->view->arResult["ITEMS"] = $books;
+            $this->view->arResult["books"] = $books;
         else
-            $this->view->arResult["ITEMS"] = array();
+            $this->view->arResult["books"] = array();
 
         parent::index();
     }
@@ -41,8 +41,8 @@ class ProductsController extends Controller
         if (strlen($data['product_title']) < 1)
             $errors['title'] = 'short';
 
-        if (isset($_FILES['product_img'])) {
-            $data['product_img'] = Files::uploadFile($_FILES['product_img'], get_class($this));
+        if (isset($_FILES['product_pic'])) {
+            $data['product_pic'] = Files::uploadFile($_FILES['product_pic'], get_class($this));
         }
 
         if (count($errors) == 0) {
@@ -52,7 +52,7 @@ class ProductsController extends Controller
                 'description' => $data['product_description'],
                 'genres_id' => $data['genres_id'],
                 'writers_id' => $data['writers_id'],
-                'img' => $data['product_img'],
+                'pic' => $data['product_pic'],
                 'active' => is_null($data['product_active']) ? '0' : '1'
             );
 

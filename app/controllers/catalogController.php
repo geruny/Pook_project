@@ -8,25 +8,25 @@ class CatalogController extends Controller
     {
         parent::__construct($prefix);
 
-        $books = $this->model->getAllBooks();
-        $this->view->books = $books;
+        // $books = $this->model->getAllBooks();
+        // $this->view->books = $books;
 
         $this->view->setTitle("Каталог");
     }
   
-    public function getBookById()
-    {
-        $id = htmlspecialchars($_POST['books_id']);
-        $books = $this->model->getAllBooks();
-        $this->view->books=$books;
+    // public function getBookById()
+    // {
+    //     $id = htmlspecialchars($_POST['books_id']);
+    //     $books = $this->model->getAllBooks();
+    //     $this->view->books=$books;
 
-        echo '<pre>';
-        var_dump($books);
-        echo '</pre>';
+    //     echo '<pre>';
+    //     var_dump($books);
+    //     echo '</pre>';
 
-        $book = array_search($id, $books);
-        Book::getBookInfo($book);
-    }
+    //     $book = array_search($id, $books);
+    //     Book::getBookInfo($book);
+    // }
 }
 
 
