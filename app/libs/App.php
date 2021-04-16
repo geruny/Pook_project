@@ -81,11 +81,13 @@ class App
 
     static function includeComponent($name, $template = 'default', $params = array())
     {
-        $file_path = COMPONENT_PATH . '/' . $name . 'class.php';
+        $file_path = __DIR__. '/../components/' . $name . '/class.php';
 
         if (file_exists($file_path)) {
 
             require_once $file_path;
+            
+            $name= 'Components\\' . $name;
             $component=new $name($template,$params);
             $component->executComponent();
 

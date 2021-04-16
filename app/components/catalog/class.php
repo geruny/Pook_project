@@ -2,9 +2,9 @@
 
 namespace Components;
 
-class Catalog extends Components{
+class Catalog extends \Libs\Components{
 
-    public function executComponent($param)
+    public function executComponent()
     {
         $this->includeTemplate();
     }
