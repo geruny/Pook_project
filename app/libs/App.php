@@ -11,7 +11,7 @@ class App
     public function __construct($prefix = '/')
     {
 
-        self::$prefix;
+        self::$prefix=$prefix;
 
         $get_url = isset($_GET['url']) ? htmlspecialchars($_GET['url']) : false;
 
