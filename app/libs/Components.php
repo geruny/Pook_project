@@ -12,7 +12,7 @@ class Components{
     {
     }
 
-    public function includeTemplate($name)
+    public function includeTemplate($name='default')
     {
     }
 

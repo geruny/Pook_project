@@ -3,6 +3,7 @@
 define('MAIN_PREFIX', '/petrov/Books_site');
 define('ADMIN_PREFIX', '/petrov/Books_site/admin');
 define('TEMPLATE_PATH', '/petrov/Books_site/app/views');
+define('COMPONENT_PATH', '/petrov/Books_site/app/components');
 define('TEMPLATE_ADMIN_PATH', '/petrov/Books_site/app/views/admin');
 define('DIR_PATH_APP', __DIR__ . "/..");
 define('BASE_DIR_AJAX', '/petrov/Books_site/app/ajax');

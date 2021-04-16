@@ -2,6 +2,8 @@
 
 <h1>Каталог</h1>
 
+
+
 <div class="row">
     <div class="col-4">
 

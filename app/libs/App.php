@@ -4,7 +4,7 @@ class App
 {
     public function __construct($prefix = '/')
     {
-    
+
         $get_url = isset($_GET['url']) ? htmlspecialchars($_GET['url']) : false;
 
         if ($get_url) {
@@ -66,15 +66,30 @@ class App
         echo '</pre>';
     }
 
-    static function getCurPage($params=false){
-        $url=$_SERVER["REQUEST_URI"];
+    static function getCurPage($params = false)
+    {
+        $url = $_SERVER["REQUEST_URI"];
 
-        if(!$params && strpos($url,"?")){
-            $url=substr($url,0,strpos($url,"?"));
+        if (!$params && strpos($url, "?")) {
+            $url = substr($url, 0, strpos($url, "?"));
         }
 
-        $url=str_replace("index.php","",$url);
+        $url = str_replace("index.php", "", $url);
 
         return $url;
+    }
+
+    static function includeComponent($name, $template = 'default', $params = array())
+    {
+        $file_path = COMPONENT_PATH . '/' . $name . 'class.php';
+
+        if (file_exists($file_path)) {
+
+            require_once $file_path;
+            $component=new $name($template,$params);
+            $component->executComponent();
+
+        } else
+            self::showError("Component dose not exists");
     }
 }
