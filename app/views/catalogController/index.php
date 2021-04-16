@@ -2,7 +2,7 @@
 
 <h1>Каталог</h1>
 
-<?=App::includeComponent('catalog')?>
+<?=Libs\App::includeComponent('catalog')?>
 
 <div class="row">
     <div class="col-4">

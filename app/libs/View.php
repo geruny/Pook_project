@@ -1,6 +1,7 @@
 <?php
 
 use Libs\User;
+use Libs\App;
 
 class View
 {

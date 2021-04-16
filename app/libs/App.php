@@ -1,5 +1,7 @@
 <?php
 
+namespace Libs;
+
 class App
 {
     public function __construct($prefix = '/')
@@ -87,8 +89,8 @@ class App
 
             require_once $file_path;
             
-            $name= 'Components\\' . $name;
-            $component=new $name($template,$params);
+            $class_name= 'Components\\' . $name;
+            $component=new $class_name($name,$template,$params);
             $component->executComponent();
 
         } else

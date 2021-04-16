@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 
+<?use Libs\App?>
+
 <html>
 
 <head>
