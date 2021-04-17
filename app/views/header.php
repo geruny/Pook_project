@@ -27,6 +27,9 @@
     <?if(isset($this->addcss)):?>
     <link href="<?= $this->addcss ?><?= rand() ?> rel=" stylesheet"">
     <?endif?>
+    
+    <--#ADD_CSS_PATHS#-->
+    <--#ADD_JS_PATHS#-->
 
 </head>
 
