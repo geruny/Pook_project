@@ -22,23 +22,4 @@ class ProductsModel extends Model
             return false;
     }
 
-    public function getList($table, $order = "id asc", $select = "*", $filter = "1=1")
-    {
-        $order = $table . '_' . $order;
-
-        if (is_array($select)) {
-            $select = implode(", ", $select);
-        }
-
-        $sth = $this->db->prepare("SELECT " . $select . " FROM "
-        . $table . " WHERE " . $filter . " ORDER BY " . $order);
-
-        $sth->execute(array());
-
-        if ($sth->rowCount() > 0) {
-            return $sth->fetchAll(PDO::FETCH_ASSOC);
-        } else
-            return false;
-    }
-
 }
