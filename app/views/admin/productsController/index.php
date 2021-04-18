@@ -17,6 +17,8 @@
             <th>Название</th>
             <th>ID Автора</th>
             <th>Автор</th>
+            <th>Дата рождения</th>
+            <th>Дата смерти</th>
             <th>ID Жанра</th>
             <th>Жанр</th>
             <th>Дата выхода</th>
@@ -32,6 +34,8 @@
             <td><?= $book["title"] ?></td>
             <td><?= $book["writers_id"] ?></td>
             <td><?= $book["writers_name"] ?></br><?= $book["middle_name"] ?></td>
+            <td><?= $book["date_of_birth"] ?></td>
+            <td><?= $book["date_of_death"] ?></td>
             <td><?= $book["genres_id"] ?></td>
             <td><?= $book["genres_name"] ?></td>
             <td><?= $book["date"] ?></td>
