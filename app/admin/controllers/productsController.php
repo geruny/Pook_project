@@ -19,7 +19,7 @@ class ProductsController extends Controller
 
     public function index()
     {
-        if ($books = $this->model->getList('books'))
+        if ($books = $this->model->getListBooks())
             $this->view->arResult["books"] = $books;
         else
             $this->view->arResult["books"] = array();
@@ -52,8 +52,7 @@ class ProductsController extends Controller
                 'description' => $data['product_description'],
                 'genres_id' => $data['genres_id'],
                 'writers_id' => $data['writers_id'],
-                'pic' => $data['product_pic'],
-                'active' => is_null($data['product_active']) ? '0' : '1'
+                'pic' => $data['product_pic']
             );
 
             if ($id = $this->model->add($addData))

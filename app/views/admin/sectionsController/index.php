@@ -1,5 +1,14 @@
 <? require_once DIR_PATH_APP.'/views/admin/header.php'?>
 
+<div class="row">
+    <div class="col-md-12">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#new_section_modal">
+            Добавить
+        </button>
+    </div>
+</div>
+</br>
+
 <? if(count($this->arResult['ITEMS'])>0):?>
 <table class="table table-dark table-striped">
     <thead>
@@ -29,14 +38,6 @@
     Нет категорий по вашему запросу
 </div>
 <? endif ?>
-
-<div class="row">
-    <div class="col-md-12">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#new_section_modal">
-            Добавить
-        </button>
-    </div>
-</div>
 
 <div class="modal fade" id="new_section_modal" tabindex="-1" role="dialog" aria-labelledby="new_section_modal_title" aria hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
