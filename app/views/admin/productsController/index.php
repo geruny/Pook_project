@@ -43,7 +43,8 @@
             <td><?= strlen($book["pic"]) > 0 ? "<img src='" . MAIN_PREFIX . "/upload/{$book["pic"]}' width='50px' />" : "" ?></td>
             <td>
                 <button onclick="getEditFormById(<?= $book["book_id"] ?>)" class="btn btn-info">Изменить</button>
-                &nbsp;
+            </td>
+            <td>
                 <button onclick="sectionDelete(<?= $book["book_id"] ?>,'<?= $book["title"] ?>')" class="btn btn-danger">Удалить</button>
             </td>
         </tr>
