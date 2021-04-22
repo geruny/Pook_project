@@ -1,5 +1,14 @@
+#index .main{
+    margin-top: 30%;
+}
+
+#index .p_margin{
+    margin-top: 80px;
+    margin-bottom: 0;
+}
+
 #index a {
-    width: 25%;
+    width: 45%;
     margin: 40px 0;
     background-color: white;
     color: black;
@@ -14,3 +23,19 @@
     transition: background-color 0.5s,
     color 0.5s;
 }
+
+#index .img{
+    width: 60%;
+}
+
+#index .serg{
+    display: flex;
+}
+
+#index .serg p{
+    margin-left: 5%;
+    padding-left: 2%;
+    border-left: solid 1px;
+    margin-bottom: 0px;
+}
+
