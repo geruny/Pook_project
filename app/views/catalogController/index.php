@@ -12,9 +12,10 @@
         <div class="row">
             <h2><?= $book["title"] ?></h2>
         </div>
-        <div class="row">
-            <div class="col-5">
+        <div class="row justify-content-center">
+            <div class="col-5 align-self-center">
                 <?= strlen($book["pic"]) > 0 ? "<img src='" . MAIN_PREFIX . "/upload/{$book["pic"]}' width='300px' />" : "" ?>
+
             </div>
             <div class="col-5">
                 <div class="row">
@@ -65,8 +66,33 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col">
+                <div class="rating">
+                    <div class="row">
+                        <div class="col-3">
+                            <p>Рейтинг</p>
+                            <div class="rating-area">
+                                <input type="radio" id="star-5" name="rating" value="5">
+                                <label for="star-5" title="Оценка «5»"></label>
+                                <input type="radio" id="star-4" name="rating" value="4">
+                                <label for="star-4" title="Оценка «4»"></label>
+                                <input type="radio" id="star-3" name="rating" value="3">
+                                <label for="star-3" title="Оценка «3»"></label>
+                                <input type="radio" id="star-2" name="rating" value="2">
+                                <label for="star-2" title="Оценка «2»"></label>
+                                <input type="radio" id="star-1" name="rating" value="1">
+                                <label for="star-1" title="Оценка «1»"></label>
+                            </div>
+                        </div>
+                        <div class="col-9">
+                            <p>Комментарии</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
     <? endforeach;?>
 </div>
 <? else:?>
