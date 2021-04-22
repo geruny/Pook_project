@@ -7,34 +7,52 @@
 <div class="container">
     <h1>Архив книг</h1>
     <? foreach($this->arResult['books'] as $book): ?>
-    <div class="row">
-        <h2><?= $book["title"] ?></h2>
-    </div>
-    <div class="row">
-        <div class="col-5">
-            <?= strlen($book["pic"]) > 0 ? "<img src='" . MAIN_PREFIX . "/upload/{$book["pic"]}' width='300px' />" : "" ?>
+    <div class="book_container">
+
+        <div class="row">
+            <h2><?= $book["title"] ?></h2>
         </div>
-        <div class="col-5">
-            <div class="row">
-                <div class="col-3">Авторы:</div>
-                <div class="col"><?= $book["writers_name"] ?>&ensp;<?= $book["middle_name"] ?></div>
+        <div class="row">
+            <div class="col-5">
+                <?= strlen($book["pic"]) > 0 ? "<img src='" . MAIN_PREFIX . "/upload/{$book["pic"]}' width='300px' />" : "" ?>
             </div>
-            <div class="row">
-                <div class="col-3">Жанр:</div>
-                <div class="col"><?= $book["genres_name"] ?></div>
-            </div>
-            <div class="row">
-                <div class="col-3">Дата выхода:</div>
-                <div class="col"><?= $book["date"] ?></div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    Описание:</br>
-                    <?= $book["description"] ?>
+            <div class="col-5">
+                <div class="row">
+                    <div class="col-3">
+                        <p>Авторы:</p>
+                    </div>
+                    <div class="col">
+                        <p><?= $book["writers_name"] ?>&ensp;<?= $book["middle_name"] ?></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3">
+                        <p>Жанр:</p>
+                    </div>
+                    <div class="col">
+                        <p><?= $book["genres_name"] ?></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3">
+                        <p> Дата выхода:</p>
+                    </div>
+                    <div class="col">
+                        <p><?= $book["date"] ?></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p>
+                            Описание:</br>
+                            <?= $book["description"] ?>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
     <? endforeach;?>
 </div>
 <? else:?>

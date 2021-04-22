@@ -1,3 +1,16 @@
 body {
-    background-color: #ddd;
+    background-color: rgb(0, 0, 0);
+}
+
+body .container {
+    color: white;
+}
+
+body .container h1,
+body .container h2{
+    margin-bottom: 30px;
+}
+
+.navbar {
+    margin-bottom: 40px;
 }

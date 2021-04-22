@@ -1,0 +1,7 @@
+.container #reg_form{
+    width: 50%;
+    background-color: rgba(41, 41, 41, 0.329);
+    padding: 30px;
+    border: solid 1px;
+
+}

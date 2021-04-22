@@ -1,6 +1,7 @@
 <? require_once DIR_PATH_APP.'/views/header.php'?>
 
 <div class="container">
+    <h1>Регистрация</h1>
     <div class="row">
         <div class="col-12">
             <div>

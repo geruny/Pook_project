@@ -25,7 +25,7 @@
     <?endif?>
 
     <?if(isset($this->addcss)):?>
-    <link href="<?= $this->addcss ?><?= rand() ?> rel=" stylesheet"">
+    <link href="<?= $this->addcss ?>?<?= rand() ?>" rel="stylesheet">
     <?endif?>
 
 </head>
