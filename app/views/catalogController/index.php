@@ -49,6 +49,20 @@
                         </p>
                     </div>
                 </div>
+                <div class="row file">
+                    <? if(strlen($book["download"]) > 0) {?>
+                    <div class="col">
+                        <a class="nav-link" download="" href="<?= MAIN_PREFIX . "/upload/{$book["download"]}" ?>">Скачать книгу</a>
+                    </div>
+                    <div class="col">
+                        <a class="nav-link" href="<?= MAIN_PREFIX . "/upload/{$book["download"]}" ?>" target="_blank">Читать онлайн</a>
+                    </div>
+                    <?} else {?>
+                    <div class="col">
+                        <a class="nav-link">Нет в архиве</a>
+                    </div>
+                    <?}?>
+                </div>
             </div>
         </div>
     </div>
